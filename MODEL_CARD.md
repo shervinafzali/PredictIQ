@@ -117,46 +117,42 @@ These were the strongest predictors based on SHAP.
 
 ## Evaluation Metrics
 
-**Performance Summary**
-Model	Val Macro-F1	Test Macro-F1
-Majority Baseline	—	~0.28
-Logistic Regression	0.343	0.341
-Random Forest	0.360	0.346
-XGBoost (untuned)	0.357	0.350
-XGBoost (tuned)	0.376	0.357
-Bet365 Odds Baseline*	—	0.380
+### Performance Summary
 
-*Bet365 odds are not used for training—only as an external best-possible benchmark.
+| Model                  | Val Macro-F1 | Test Macro-F1 |
+|------------------------|--------------|---------------|
+| Majority Baseline      | —            | ~0.28         |
+| Logistic Regression    | 0.343        | 0.341         |
+| Random Forest          | 0.360        | 0.346         |
+| XGBoost (untuned)      | 0.357        | 0.350         |
+| **XGBoost (tuned)**    | **0.376**    | **0.357**     |
+| Bet365 Odds Baseline*  | —            | **0.380**     |
 
-**Calibration**
+\*Bet365 odds used only as an external reference baseline.
 
-Brier Scores (lower = better):
+### Calibration
 
-Home win: 0.2416
+- Brier Scores (lower = better):
+- Home win: 0.2416
+- Draw: 0.2008
+- Away win: 0.2036
+- The model is reasonably calibrated, with slight overconfidence at the high end.
 
-Draw: 0.2008
+### League-wise Performance**
 
-Away win: 0.2036
-
-The model is reasonably calibrated, with slight overconfidence at the high end.
-
-**League-wise Performance**
-
-Macro-F1 ranges from 0.28 to 0.39 depending on league.
-Higher-visibility leagues (Premier League, La Liga) perform better due to larger, more stable data.
+- Macro-F1 ranges from 0.28 to 0.39 depending on league.
+- Higher-visibility leagues (Premier League, La Liga) perform better due to larger, more stable data.
 
 ## Explainability (SHAP)
-**Key Findings**
 
-Recent momentum features dominate (goal difference, points per game).
+### Key Findings
 
-Tactical attributes refine predictions but have smaller impact.
+- Recent momentum features dominate (goal difference, points per game).
+- Tactical attributes refine predictions but have smaller impact.
+- Draw predictions occur when features are balanced near zero (symmetry).
+- Model behaves intuitively—consistent with football analytics literature.
 
-Draw predictions occur when features are balanced near zero (symmetry).
-
-Model behaves intuitively—consistent with football analytics literature.
-
-**Top 5 Most Important Features**
+### Top 5 Most Important Features**
 
 1. avg_goal_diff_last5_diff
 2. points_per_game_last5_diff
@@ -165,34 +161,34 @@ Model behaves intuitively—consistent with football analytics literature.
 5. team_strength_diff
 
 ## Ethical Considerations
-**Fairness & Bias**
+### Fairness & Bias
 
 - Dataset represents European leagues only
 - Lower-volume leagues show reduced prediction accuracy
 - No personal identifiable data (PII) is used
 - No protected demographic attributes present
 
-**Privacy**
+### Privacy
 
 - Entire dataset is anonymized
 - No player-level sensitive data
 - No model outputs identify individuals
 
-**Security**
+### Security
 
 - No external API calls
 - No sensitive data transfer
 - Model is deterministic and offline
 
 ## Limitations and Recommendations
-**Known Limitations**
+### Known Limitations
 
 - Football outcomes are highly stochastic—upper performance bound is low
 - Draw prediction remains difficult
 - Missing data in some seasons reduces consistency
 - No access to injuries, lineups, transfers, weather, or referee data
 
-**Recommendations for Use**
+### Recommendations for Use
 
 - Use probabilities (not hard labels) for decision-making
 - Retrain on new seasons if extending to other time periods
