@@ -205,7 +205,9 @@ These were the strongest predictors based on SHAP.
 
 ## Contact
 
-Developer: Amir Khajavirad, Shervin Afzali, Rojin Omidvar and Mana Mohsenzadeh 
-GitHub: 
+**Developers:** Amir Khajavirad, Shervin Afzali, Rojin Omidvar and Mana Mohsenzadeh 
+
+**GitHub:**
+ 
 https://github.com/shervinafzali
 https://github.com/Amirkhajavirad
