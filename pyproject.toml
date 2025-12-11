@@ -1,0 +1,28 @@
+[project]
+name = "predictiq"
+version = "0.1.0"
+description = "PredictIQ Sports Match Outcome Prediction"
+authors = [
+    { name="Shervin Afzali, Amir Khajavirad" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+
+dependencies = [
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "seaborn",
+    "scikit-learn",
+    "xgboost",
+    "lightgbm",
+    "catboost",
+    "optuna",
+    "sqlalchemy",
+    "pyarrow",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
