@@ -121,7 +121,7 @@ These were the strongest predictors based on SHAP.
 
 | Model                  | Val Macro-F1 | Test Macro-F1 |
 |------------------------|--------------|---------------|
-| Majority Baseline      | —            | ~0.28         |
+| Majority Baseline      | —            | 0.203         |
 | Logistic Regression    | 0.343        | 0.341         |
 | Random Forest          | 0.360        | 0.346         |
 | XGBoost (untuned)      | 0.357        | 0.350         |
@@ -132,11 +132,12 @@ These were the strongest predictors based on SHAP.
 
 ### Calibration
 
-- Brier Scores (lower = better):
+**Brier Scores (lower = better):**
 - Home win: 0.2416
 - Draw: 0.2008
 - Away win: 0.2036
-- The model is reasonably calibrated, with slight overconfidence at the high end.
+
+\*The model is reasonably calibrated, with slight overconfidence at the high end.
 
 ### League-wise Performance**
 
