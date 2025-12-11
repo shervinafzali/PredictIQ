@@ -26,3 +26,22 @@ def query_db(conn, sql: str, params=None) -> pd.DataFrame:
     """Run SQL and return results as a DataFrame."""
     return pd.read_sql_query(sql, conn, params or {})
 
+def load_db():
+    """
+    Convenience function:
+    Returns (conn, q) where `q` is a shorthand query function.
+
+    Example:
+        conn, q = load_db()
+        matches = q("SELECT * FROM Match LIMIT 5")
+
+    Returns:
+        tuple: (connection, query_function)
+    """
+    conn = connect_to_db()
+
+    def q(sql: str, params=None):
+        """Shorthand query wrapper."""
+        return query_db(conn, sql, params)
+
+    return conn, q
