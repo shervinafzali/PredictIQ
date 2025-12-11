@@ -24,7 +24,7 @@ def connect_to_db(db_path: Path):
 
 def query_db(conn, sql: str, params=None) -> pd.DataFrame:
     """Run SQL and return results as a DataFrame."""
-    return pd.read_sql_query(sql, conn, params or {})
+    return pd.read_sql_query(sql, conn, params=params)
 
 
 def load_db():
