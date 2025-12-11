@@ -187,7 +187,7 @@ Notebook: `notebooks/3_Modeling.ipynb`
 
 A simple FastAPI service could accept:
 
-```json
+```bash
 POST /predict
 {
   "home_team_id": 8634,
