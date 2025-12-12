@@ -90,7 +90,8 @@ See ARCHITECTURE.md for:
 
    ```text
    data/raw/database.sqlite
-```
+   ```
+
 3. The notebooks and predictiq.data.load_db() assume this path and will connect
 to data/raw/database.sqlite automatically.
 
