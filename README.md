@@ -82,6 +82,18 @@ See ARCHITECTURE.md for:
 - Full ML pipeline overview
 - Deployment scenarios (batch or API inference)
 
+## Dataset Setup
+
+1. Download the **European Soccer Database** from Kaggle:
+   - https://www.kaggle.com/datasets/hugomathien/soccer
+2. Extract it locally and copy `database.sqlite` into:
+
+   ```text
+   data/raw/database.sqlite
+```
+3. The notebooks and predictiq.data.load_db() assume this path and will connect
+to data/raw/database.sqlite automatically.
+
 **License:**
 MIT License
 
